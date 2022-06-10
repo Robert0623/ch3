@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="car" class="com.fastcampus.ch3.Car" >
+        <property name="color" value="red"/>
+        <property name="oil" value="100"/>
+        <property name="engine" ref="engine"/>
+        <property name="doors">
+            <array value-type="com.fastcampus.ch3.Door">
+                <ref bean="door"/>
+                <ref bean="door"/>
+            </array>
+        </property>
+    </bean>
+    <bean id="engine" class="com.fastcampus.ch3.Engine" />
+    <bean id="door" class="com.fastcampus.ch3.Door" scope="prototype"/>
+</beans>
