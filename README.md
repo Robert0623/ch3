@@ -16,3 +16,13 @@
 - Spring DI - 이론, 실습
 - @Component, @Autowired, @Resource, @Value, @Qulifier
 - config.xml에 bean 등록 <property>, <constructor-args>, <component-scan>
+
+## 06.11
+- ch3-6 ~ ch3-12
+- Spring DI - 이론, 실습
+- web.xml, root-context.xml, servlet-context.xml 설정파일 뜯어보기
+- root ac, servlet ac 작동 순서, 생성과정, 부모관계
+- debugging 방법, Tomcat 작동시 순서대로 log 보는 법
+- Spring IoC - 이론, 실습
+- @Component, @Autowired, @Resource
+- @Value - 시스템환경변수 수정, setting.properties
