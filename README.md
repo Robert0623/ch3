@@ -26,3 +26,10 @@
 - Spring IoC - 이론, 실습
 - @Component, @Autowired, @Resource
 - @Value - 시스템환경변수 수정, setting.properties
+
+## 06.12
+- ch3-13 ~ ch3-15
+- DataSource bean 등록
+- MySql DBConnection
+- TDD, Junit
+- CRUD DAO 작성, 테스트
