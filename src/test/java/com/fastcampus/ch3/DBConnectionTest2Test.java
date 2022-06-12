@@ -62,27 +62,34 @@ public class DBConnectionTest2Test {
 //    public void updateUserTest() throws Exception {
 //        deleteAll();
 //        User user = new User("asdf2", "1234", "abc", "aaaa@aaa.com", new Date(), "fb", new Date());
-//        int rowCnt = updateUser(user);
-//        System.out.println("user = " + user);
+//        User user2 = new User("asdf2", "4444", "bbb", "bbb@aaa.com", new Date(), "kakao", new Date());
+//        int rowCnt = insertUser(user);
 //        assertTrue(rowCnt==1);
+//
+//        rowCnt = updateUser(user2);
+//        System.out.println("user = " + user);
+//        assertTrue(user.getName().equals(user2.getName()));
 //    }
-//    //매개변수로 받은 사용자 정보로 user_info테이블을 update하는 메서드
-//    public int updateUser(User user) throws Exception {
-//        Connection conn = ds.getConnection();
-//
-//        String sql = "update user_info set pwd=?, name=?, email=? where id=?";
-//
-//        PreparedStatement pstmt = conn.prepareStatement(sql); //SQL Injection공격, 성능향상
-//        pstmt.setString(1, "5555");
-//        pstmt.setString(2, "robert");
-//        pstmt.setString(3, "abc@abc.com");
-//        pstmt.setString(4, user.getId());
-//
-//
-//        int rowCnt = pstmt.executeUpdate(); //insert, delete, update
-//
-//        return rowCnt;
-//    }
+    //매개변수로 받은 사용자 정보로 user_info테이블을 update하는 메서드
+    public int updateUser(User user) throws Exception {
+        Connection conn = ds.getConnection();
+
+        String sql = "update user_info set pwd=?, name=?, email=?, birth=?, sns=?, reg_date=? where id=?";
+
+        PreparedStatement pstmt = conn.prepareStatement(sql); //SQL Injection공격, 성능향상
+        pstmt.setString(1, user.getPwd());
+        pstmt.setString(2, user.getName());
+        pstmt.setString(3, user.getEmail());
+        pstmt.setDate(4, new java.sql.Date(user.getBirth().getTime()));
+        pstmt.setString(5, user.getSns());
+        pstmt.setTimestamp(6, new java.sql.Timestamp(user.getReg_date().getTime()));
+        pstmt.setString(7, user.getId());
+
+
+        int rowCnt = pstmt.executeUpdate(); //insert, delete, update
+
+        return rowCnt;
+    }
 
     public int deleteUser(String id) throws Exception {
         Connection conn = ds.getConnection();
