@@ -33,3 +33,10 @@
 - MySql DBConnection
 - TDD, Junit
 - CRUD DAO 작성, 테스트
+
+## 06.13
+- ch3-16 ~ ch3-21
+- DAO 작성, 테스트
+- Transaction, Commit, Rollback
+- AOP
+- Transaction, propagation test
